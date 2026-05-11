@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-6 py-16">
+
+  <h1 class="rp-heading">{{ T "resourcepacksTitle" }}</h1>
+
+  {{ if .Pages }}
+  <div class="plugin-list">
+    {{ range .Pages.ByWeight }}
+    {{ partial "pcard" . }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="rp-empty">
+    <div class="rp-empty-icon">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+      </svg>
+    </div>
+    <p class="rp-empty-title">{{ T "comingSoon" }}</p>
+    <p class="rp-empty-sub">{{ T "resourcepacksEmptySub" }}</p>
+  </div>
+  {{ end }}
+
+</div>
+
+<style>
+.rp-heading {
+  font-size: 2rem; font-weight: 800; color: var(--c-text);
+  letter-spacing: -.02em; margin-bottom: 2rem;
+}
+.rp-empty {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .75rem; padding: 4rem 2rem; text-align: center;
+  background: var(--c-bg-2); border: 1px dashed var(--c-border-2);
+  border-radius: 16px;
+}
+.rp-empty-icon {
+  width: 64px; height: 64px; border-radius: 16px;
+  background: var(--c-bg); border: 1px solid var(--c-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-text-3);
+}
+.rp-empty-title { font-size: 1.125rem; font-weight: 700; color: var(--c-text); }
+.rp-empty-sub   { font-size: .875rem; color: var(--c-text-3); max-width: 28ch; line-height: 1.6; }
+</style>
+{{ end }}

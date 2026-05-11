@@ -1,0 +1,18 @@
+experience:
+  - company: "Enigma North Studio"
+    company_link: "https://enigmanorth.dev"
+    role: "Lead Developer"
+    period: "2022 — Present"
+    country: "Remote"
+    description: "Architecting and shipping full-stack products from zero to production. Leading a small cross-functional team, setting technical direction and maintaining high code quality standards."
+
+  - company: "Open Source Contributor"
+    role: "OSS Developer"
+    period: "2020 — Present"
+    description: "Active contributor to developer tooling, UI component libraries and backend frameworks. Maintainer of several open-source projects with hundreds of GitHub stars."
+
+  - company: "Freelance"
+    role: "Full-stack Engineer"
+    period: "2018 — 2022"
+    country: "Remote"
+    description: "Delivered production-ready web applications for clients across fintech, edtech and e-commerce domains. Specialised in React frontends and Node.js / Go backends."

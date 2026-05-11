@@ -1,0 +1,18 @@
+projects:
+  - title: "Northboard"
+    description: "A minimalist project management tool built for developers. Keyboard-first, distraction-free and blazingly fast."
+    tech: "Next.js, TypeScript, PostgreSQL, Tailwind"
+    image: "/images/projects/northboard.png"
+    link: "https://github.com/enigmanorth/northboard"
+
+  - title: "Cipher API"
+    description: "A high-performance REST / GraphQL gateway with built-in rate limiting, auth middleware and OpenAPI docs generation."
+    tech: "Go, PostgreSQL, Redis, Docker"
+    image: "/images/projects/cipher-api.png"
+    link: "https://github.com/enigmanorth/cipher-api"
+
+  - title: "Voidwatch"
+    description: "Open-source uptime monitoring service. Tracks your endpoints, alerts on downtime and visualises response-time history."
+    tech: "Python, FastAPI, PostgreSQL, React"
+    image: "/images/projects/voidwatch.png"
+    link: "https://github.com/enigmanorth/voidwatch"

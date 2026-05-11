@@ -1,0 +1,18 @@
+experience:
+  - company: "Enigma North Studio"
+    company_link: "https://enigmanorth.dev"
+    role: "Ведущий разработчик"
+    period: "2022 — настоящее время"
+    country: "Удалённо"
+    description: "Проектирование и запуск fullstack-продуктов с нуля до продакшена. Руководство небольшой командой, определение технического вектора и поддержание высоких стандартов качества кода."
+
+  - company: "Open Source Contributor"
+    role: "OSS-разработчик"
+    period: "2020 — настоящее время"
+    description: "Активный контрибьютор инструментов для разработчиков, UI-библиотек и backend-фреймворков. Мейнтейнер нескольких open-source проектов с сотнями звёзд на GitHub."
+
+  - company: "Фриланс"
+    role: "Fullstack-инженер"
+    period: "2018 — 2022"
+    country: "Удалённо"
+    description: "Разработка production-ready веб-приложений для клиентов из fintech, edtech и e-commerce. Специализация на React-фронтенде и бэкенде на Node.js / Go."

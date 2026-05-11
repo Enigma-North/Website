@@ -1,0 +1,56 @@
+[pluginsTitle]
+other = "Plugins"
+
+[downloadBtn]
+other = "Download"
+
+[moreInfo]
+other = "More Info"
+
+[compatibleWith]
+other = "Works with"
+
+[backToPlugins]
+other = "Back to Plugins"
+
+[contactTitle]
+other = "Contact"
+
+[discordCopied]
+other = "Discord username copied to clipboard!"
+
+[discordCopyFailed]
+other = "Failed to copy username."
+
+[contactIntro]
+other = "The best way to reach me is via email or Discord."
+
+[addonsTitle]
+other = "Addons for Plugins"
+
+[resourcepacksTitle]
+other = "Resourcepack's"
+
+[comingSoon]
+other = "Coming soon"
+
+[resourcepacksEmptySub]
+other = "Resourcepacks are being worked on and will appear here soon."
+
+[contributorSub]
+other = "Contributors"
+
+[contributorRole]
+other = "Developer & Plugin Porter"
+
+[aboutTagline]
+other = "Minecraft plugin development & porting"
+
+[statPlugins]
+other = "Plugins"
+
+[statMcVersion]
+other = "Minecraft"
+
+[statOpenSource]
+other = "Open Source"

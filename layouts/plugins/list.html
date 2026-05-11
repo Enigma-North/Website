@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-6 py-16">
+
+  <h1 class="list-heading">{{ T "pluginsTitle" }}</h1>
+
+  <div class="plugin-list">
+    {{ range .Pages.ByWeight }}
+    {{ partial "pcard" . }}
+    {{ end }}
+  </div>
+
+</div>
+
+<style>
+.list-heading { font-size: 2rem; font-weight: 800; color: var(--c-text); letter-spacing: -.02em; margin-bottom: 2rem; }
+</style>
+{{ end }}

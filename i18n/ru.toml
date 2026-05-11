@@ -1,0 +1,95 @@
+[whatIWorkWith]
+other = "Мой стек"
+
+[experienceTitle]
+other = "Опыт"
+
+[voluntaryTitle]
+other = "Волонтёрство"
+
+[certificationsTitle]
+other = "Сертификаты"
+
+[honorsTitle]
+other = "Награды"
+
+[projectsTitle]
+other = "Проекты"
+
+[blogsTitle]
+other = "Блог"
+
+[viewAll]
+other = "Смотреть все"
+
+[localTimeLabel]
+other = "Местное время:"
+
+[menuTitle]
+other = "Меню"
+
+[learnMore]
+other = "Подробнее"
+
+[builtUsing]
+other = "Создано с помощью"
+
+[takeALookAtMy]
+other = "Загляните на мой"
+
+[pluginsTitle]
+other = "Плагины"
+
+[downloadBtn]
+other = "Скачать"
+
+[moreInfo]
+other = "Подробнее"
+
+[compatibleWith]
+other = "Работает с"
+
+[backToPlugins]
+other = "К плагинам"
+
+[contactTitle]
+other = "Контакт"
+
+[discordCopied]
+other = "Ник Discord скопирован в буфер обмена!"
+
+[discordCopyFailed]
+other = "Не удалось скопировать."
+
+[contactIntro]
+other = "Лучший способ связаться — электронная почта или Discord."
+
+[addonsTitle]
+other = "Дополнения для плагинов"
+
+[resourcepacksTitle]
+other = "Ресурспаки"
+
+[comingSoon]
+other = "Скоро"
+
+[resourcepacksEmptySub]
+other = "Ресурспаки находятся в разработке и появятся здесь в ближайшее время."
+
+[contributorSub]
+other = "Участники"
+
+[contributorRole]
+other = "Разработчик и портировщик плагинов"
+
+[aboutTagline]
+other = "Разработка и портирование плагинов Minecraft"
+
+[statPlugins]
+other = "Плагина"
+
+[statMcVersion]
+other = "Minecraft"
+
+[statOpenSource]
+other = "Open Source"

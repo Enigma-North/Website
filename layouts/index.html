@@ -1,0 +1,81 @@
+{{ define "main" }}
+{{ $authorData := index site.Data .Language.Lang "author" }}
+{{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
+
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-6 py-16">
+
+  <!-- ── Hero ── -->
+  {{ with $author }}
+  <section class="mb-20">
+    <h1 class="hero-slogan">We port.<br>You play.</h1>
+    <p class="hero-desc">{{ .description }}</p>
+  </section>
+  {{ end }}
+
+  {{ $sec := .Site.GetPage "section" "plugins" }}
+  {{ if $sec }}
+  {{ $plugins := where $sec.Pages "Params.addon" "!=" true }}
+  {{ $addons  := where $sec.Pages "Params.addon" true }}
+
+  <!-- ── Plugins ── -->
+  {{ if $plugins }}
+  <section class="mb-14">
+    <div class="section-header">
+      <h2 class="section-title">{{ T "pluginsTitle" }}</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="plugin-list">
+      {{ range $plugins.ByWeight }}{{ partial "pcard" . }}{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <!-- ── Addons ── -->
+  {{ if $addons }}
+  <section class="mb-14">
+    <div class="section-header">
+      <h2 class="section-title">{{ T "addonsTitle" }}</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="plugin-list">
+      {{ range $addons.ByWeight }}{{ partial "pcard" . }}{{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ end }}
+
+  <!-- ── Resourcepacks ── -->
+  {{ $rp := .Site.GetPage "section" "resourcepacks" }}
+  <section class="mb-14">
+    <div class="section-header">
+      <h2 class="section-title">{{ T "resourcepacksTitle" }}</h2>
+      <div class="section-line"></div>
+    </div>
+    {{ if and $rp $rp.Pages }}
+    <div class="plugin-list">
+      {{ range $rp.Pages.ByWeight }}{{ partial "pcard" . }}{{ end }}
+    </div>
+    {{ else }}
+    <div class="coming-soon">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+      </svg>
+      {{ T "comingSoon" }}
+    </div>
+    {{ end }}
+  </section>
+
+</div>
+
+<style>
+.hero-slogan {
+  font-size: clamp(3rem, 8vw, 5.5rem); font-weight: 800;
+  color: var(--c-text); line-height: 1.05; margin-bottom: 1.25rem;
+  letter-spacing: -.035em;
+}
+.hero-desc {
+  font-size: 1rem; color: var(--c-text-3); line-height: 1.75; max-width: 36ch;
+}
+</style>
+{{ end }}

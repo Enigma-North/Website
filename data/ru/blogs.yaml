@@ -1,0 +1,15 @@
+blogs:
+  - title: "Почему я перешёл с Webpack на Vite (и не пожалел)"
+    date: "2025-04-10"
+    summary: "Практический разбор процесса миграции, подводные камни и 10-кратное ускорение сборки, которое мы получили на большом TypeScript-монорепо."
+    link: "https://enigmanorth.dev/blog/webpack-to-vite"
+
+  - title: "Rate-limiter на Go с нуля"
+    date: "2025-02-28"
+    summary: "Token bucket, sliding window, fixed window — что каждый алгоритм означает на практике и как реализовать их без внешних зависимостей."
+    link: "https://enigmanorth.dev/blog/rate-limiter-go"
+
+  - title: "Тихая сила server-sent events"
+    date: "2025-01-15"
+    summary: "WebSocket у всех на слуху, но SSE зачастую — более простое и надёжное решение для однонаправленных real-time данных. Когда и как его использовать."
+    link: "https://enigmanorth.dev/blog/server-sent-events"

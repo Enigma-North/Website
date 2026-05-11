@@ -1,0 +1,90 @@
+{{ define "main" }}
+<div class="w-full md:w-4/5 lg:w-3/5 mx-auto px-6 py-14">
+
+  <!-- Back -->
+  <nav class="mb-8">
+    <a href="{{ "plugins/" | absLangURL }}" class="back-link">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M19 12H5M12 19l-7-7 7-7"/>
+      </svg>
+      {{ T "backToPlugins" }}
+    </a>
+  </nav>
+
+  <!-- Title row -->
+  <h1 class="ph-title">{{ .Title }}</h1>
+
+  <!-- Meta row: version badge + buttons in one line -->
+  <div class="ph-meta">
+    {{ with .Params.version }}
+    <div class="ph-version">
+      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+      </svg>
+      {{ T "compatibleWith" }}: {{ . }}
+    </div>
+    {{ end }}
+
+    <div class="ph-actions">
+      {{ with .Params.download }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn-dl">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        {{ T "downloadBtn" }}
+      </a>
+      {{ end }}
+      {{ with .Params.github }}
+      <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="btn-gh">
+        <svg width="14" height="14" viewBox="0,0,256,256" fill="currentColor">
+          <g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0-12,5.373-12,12 0,5.623 3.872,10.328 9.092,11.63-.056-.162-.092-.35-.092-.583v-2.051c-.487,0-1.303,0-1.508,0-.821,0-1.551-.353-1.905-1.009-.393-.729-.461-1.844-1.435-2.526-.289-.227-.069-.486.264-.451.615.174 1.125.596 1.605 1.222.478.627.703.769 1.596.769.433,0 1.081-.025 1.691-.121.328-.833.895-1.6 1.588-1.962-3.996-.411-5.903-2.399-5.903-5.098 0-1.162.495-2.286 1.336-3.233-.276-.94-.623-2.857.106-3.587 1.798,0 2.885,1.166 3.146,1.481.896-.307 1.88-.481 2.914-.481 1.036,0 2.024.174 2.922.483.258-.313 1.346-1.483 3.148-1.483.732.731.381 2.656.102 3.594.836.945 1.328 2.066 1.328 3.226 0,2.697-1.904,4.684-5.894,5.097 1.098.573 1.899 2.183 1.899 3.396v2.734c0,.104-.023.179-.035.268 4.676-1.639 8.035-6.079 8.035-11.315 0-6.627-5.373-12-12-12z"/></g>
+        </svg>
+        GitHub
+      </a>
+      {{ end }}
+    </div>
+  </div>
+
+  <!-- Divider -->
+  <div class="ph-divider"></div>
+
+  <!-- README -->
+  <div class="readme">{{ .Content }}</div>
+
+</div>
+
+<style>
+.back-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .8125rem; color: var(--c-text-3); text-decoration: none;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--c-text-2); }
+.back-link svg { flex-shrink: 0; }
+
+.ph-title {
+  font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800;
+  color: var(--c-text); letter-spacing: -.025em;
+  margin-bottom: 1rem; line-height: 1.15;
+}
+
+.ph-meta {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: .75rem; margin-bottom: 2rem;
+}
+
+.ph-version {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .75rem; font-weight: 600;
+  color: var(--c-text-3);
+  background: var(--c-bg-2); border: 1px solid var(--c-border);
+  padding: .3rem .75rem; border-radius: 999px;
+}
+
+.ph-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.ph-divider {
+  height: 1px; background: var(--c-line); margin-bottom: 2.5rem;
+}
+</style>
+{{ end }}

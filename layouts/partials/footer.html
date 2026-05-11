@@ -1,0 +1,9 @@
+<footer style="margin-top:6rem;border-top:1px solid var(--c-line);padding:1.5rem 0 3rem;">
+    <div style="max-width:48rem;margin:0 auto;text-align:center;">
+        {{ $authorData := index site.Data .Language.Lang "author" }}
+        {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
+        {{ with $author }}
+        <p style="font-size:.8125rem;color:var(--c-text-3);">© {{ now.Format "2006" }} {{ .name }}</p>
+        {{ end }}
+    </div>
+</footer>

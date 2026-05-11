@@ -1,0 +1,65 @@
+baseURL = 'https://enigmanorth.dev/'
+title = 'Enigma North'
+theme = 'hugo-noir'
+
+relativeURLs = true
+canonifyURLs = true
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "Enigma North"
+    weight = 1
+    contentDir = "content/en"
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        name = "About"
+        pageRef = "/about"
+        weight = 1
+      [[languages.en.menu.main]]
+        name = "Plugins"
+        pageRef = "/plugins"
+        weight = 2
+      [[languages.en.menu.main]]
+        name = "Resourcepacks"
+        pageRef = "/resourcepacks"
+        weight = 3
+      [[languages.en.menu.main]]
+        name = "Contributors"
+        pageRef = "/contributor"
+        weight = 4
+
+  [languages.ru]
+    languageName = "Русский"
+    title = "Enigma North"
+    weight = 2
+    contentDir = "content/ru"
+    [languages.ru.menu]
+      [[languages.ru.menu.main]]
+        name = "О нас"
+        pageRef = "/about"
+        weight = 1
+      [[languages.ru.menu.main]]
+        name = "Плагины"
+        pageRef = "/plugins"
+        weight = 2
+      [[languages.ru.menu.main]]
+        name = "Ресурспаки"
+        pageRef = "/resourcepacks"
+        weight = 3
+      [[languages.ru.menu.main]]
+        name = "Участники"
+        pageRef = "/contributor"
+        weight = 4
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  name = "Enigma North"
+  discord = "sas.hard"
+  github = "https://github.com/Repulsiveprogress"
