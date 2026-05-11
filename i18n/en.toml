@@ -43,6 +43,9 @@ other = "Contributors"
 [contributorRole]
 other = "Developer & Plugin Porter"
 
+[macCoffeeRole]
+other = "Resourcepack & Model Developer"
+
 [aboutTagline]
 other = "Minecraft plugin development & porting"
 

@@ -82,6 +82,9 @@ other = "Участники"
 [contributorRole]
 other = "Разработчик и портировщик плагинов"
 
+[macCoffeeRole]
+other = "Разработчик ресурспаков, моделей"
+
 [aboutTagline]
 other = "Разработка и портирование плагинов Minecraft"
 
