@@ -1,4 +1,4 @@
-baseURL = 'https://enigma-north.lololomivk.workers.dev/'
+baseURL = '/'
 title = 'Enigma North'
 theme = 'hugo-noir'
 
