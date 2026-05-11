@@ -9,19 +9,23 @@
   <!-- Contributor card -->
   <div class="contrib-card">
 
+    {{/* Extract GitHub username from params URL */}}
+    {{ $ghURL := .Site.Params.github }}
+    {{ $ghUser := index (last 1 (split $ghURL "/")) 0 }}
+
     <!-- Avatar -->
     <div class="contrib-avatar-wrap">
-      <img src="https://github.com/Repulsiveprogress.png?size=200"
-           alt="Repulsiveprogress"
+      <img src="{{ $ghURL }}.png?size=200"
+           alt="{{ $ghUser }}"
            class="contrib-avatar"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <div class="contrib-avatar-fallback" style="display:none;">RP</div>
+      <div class="contrib-avatar-fallback" style="display:none;">{{ substr $ghUser 0 2 | upper }}</div>
     </div>
 
     <!-- Info -->
     <div class="contrib-info">
       <div class="contrib-names">
-        <h2 class="contrib-name">Repulsiveprogress</h2>
+        <h2 class="contrib-name">{{ $ghUser }}</h2>
       </div>
 
       <div class="contrib-role">{{ T "contributorRole" }}</div>
@@ -29,7 +33,7 @@
       <div class="contrib-links">
 
         <!-- GitHub -->
-        <a href="https://github.com/Repulsiveprogress"
+        <a href="{{ $ghURL }}"
            target="_blank" rel="noopener noreferrer"
            class="clink clink-gh" title="GitHub">
           <svg width="18" height="18" viewBox="0,0,256,256" fill="currentColor">

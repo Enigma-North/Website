@@ -1,9 +1,115 @@
 <!DOCTYPE html>
-<html lang="{{ .Language.Lang }}">
+<html lang="{{ .Language.Lang }}" {{ if eq .Language.Lang "ru" }}xml:lang="ru"{{ end }}>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+    {{/* ── Title ── */}}
+    {{ $title := cond .IsHome .Site.Title (printf "%s — %s" .Title .Site.Title) }}
+    <title>{{ $title }}</title>
+
+    {{/* ── Description ── */}}
+    {{ $isRu := eq .Language.Lang "ru" }}
+    {{ $defaultDesc := cond $isRu .Site.Params.descriptionRu .Site.Params.description }}
+    {{ $desc := cond (ne .Description "") .Description $defaultDesc }}
+    {{ if .Params.summary }}{{ $desc = .Params.summary }}{{ end }}
+    <meta name="description" content="{{ $desc | plainify | truncate 160 }}">
+
+    {{/* ── Keywords ── */}}
+    {{ $kw := cond $isRu .Site.Params.keywordsRu .Site.Params.keywords }}
+    {{ if .Params.keywords }}{{ $kw = delimit .Params.keywords ", " }}{{ end }}
+    <meta name="keywords" content="{{ $kw }}">
+
+    {{/* ── Author & robots ── */}}
+    <meta name="author" content="{{ .Site.Params.name }}">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    {{/* ── Canonical & hreflang ── */}}
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+    <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+
+    {{/* ── Open Graph ── */}}
+    {{ $ogType := cond .IsHome "website" "article" }}
+    {{ $ogImage := .Site.Params.image }}
+    {{ if .Params.image }}{{ $ogImage = .Params.image }}{{ end }}
+    <meta property="og:type" content="{{ $ogType }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $desc | plainify | truncate 200 }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:image" content="{{ $ogImage | absURL }}">
+    <meta property="og:locale" content="{{ cond $isRu "ru_RU" "en_US" }}">
+    {{ range .AllTranslations }}
+    {{ if ne .Language.Lang $.Language.Lang }}
+    <meta property="og:locale:alternate" content="{{ cond (eq .Language.Lang "ru") "ru_RU" "en_US" }}">
+    {{ end }}
+    {{ end }}
+
+    {{/* ── Twitter Card ── */}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $desc | plainify | truncate 200 }}">
+    <meta name="twitter:image" content="{{ $ogImage | absURL }}">
+
+    {{/* ── Yandex & Google verification ── */}}
+    {{ with .Site.Params.yandex.verification }}<meta name="yandex-verification" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.google.verification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
+
+    {{/* ── JSON-LD structured data ── */}}
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}",
+      "logo": "{{ "/favicon-512.png" | absURL }}",
+      "sameAs": [
+        "{{ .Site.Params.github }}"
+      ],
+      "description": "{{ $desc | plainify }}"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ .Site.Title }}",
+      "url": "{{ .Site.BaseURL }}"
+    }
+    </script>
+    {{ else if eq .Section "plugins" }}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "{{ .Title }}",
+      "description": "{{ $desc | plainify }}",
+      "applicationCategory": "GamePlugin",
+      "operatingSystem": "Minecraft Paper/Spigot",
+      "url": "{{ .Permalink }}",
+      {{ with .Params.download }}"downloadUrl": "{{ . }}",{{ end }}
+      "author": {
+        "@type": "Organization",
+        "name": "{{ $.Site.Title }}"
+      }
+    }
+    </script>
+    {{ end }}
+
+    {{/* ── Favicon ── */}}
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#0071cd">
+    <meta name="msapplication-TileColor" content="#0071cd">
+    <meta name="msapplication-TileImage" content="/favicon-512.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
@@ -195,6 +301,28 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    {{/* ── Language auto-redirect ── */}}
+    {{/* Build a map: lang -> URL for this page and its translations */}}
+    <script>
+    (function() {
+        var langMap = {
+            {{ range .AllTranslations }}"{{ .Language.Lang }}": "{{ .RelPermalink }}",
+            {{ end }}"{{ .Language.Lang }}": "{{ .RelPermalink }}"
+        };
+        var pref = localStorage.getItem('lang-pref');
+        if (pref) return;
+        var br = (navigator.language || navigator.userLanguage || 'en').toLowerCase().split('-')[0];
+        var cur = "{{ .Language.Lang }}";
+        var target = langMap[br];
+        if (target && br !== cur) {
+            localStorage.setItem('lang-pref', br);
+            window.location.replace(target);
+        } else {
+            localStorage.setItem('lang-pref', cur);
+        }
+    })();
+    </script>
 </head>
 <body class="min-h-screen">
     {{ partial "header" . }}

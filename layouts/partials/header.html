@@ -68,6 +68,7 @@
                             {{ if $found }}{{ $translation = index $found 0 }}{{ end }}
                             {{ $isCurrent := eq .Lang $.Language.Lang }}
                             <a href="{{ if $translation }}{{ $translation.Permalink }}{{ else }}{{ .Lang | absLangURL }}{{ end }}"
+                               onclick="localStorage.setItem('lang-pref','{{ .Lang }}')"
                                class="{{ if $isCurrent }}language-active{{ end }} text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-300">
                                 {{ .LanguageName }}
                             </a>
@@ -106,6 +107,7 @@
                                 {{ if $found }}{{ $translation = index $found 0 }}{{ end }}
                                 {{ $isCurrent := eq .Lang $.Language.Lang }}
                                 <a href="{{ if $translation }}{{ $translation.Permalink }}{{ else }}{{ .Lang | absLangURL }}{{ end }}"
+                                   onclick="localStorage.setItem('lang-pref','{{ .Lang }}')"
                                    class="{{ if $isCurrent }}language-active{{ end }} text-text-secondary-light dark:text-text-secondary-dark hover:text-text-primary-light dark:hover:text-text-primary-dark transition-colors duration-300">
                                     {{ .LanguageName }}
                                 </a>

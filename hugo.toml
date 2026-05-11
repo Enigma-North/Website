@@ -5,6 +5,8 @@ theme = 'hugo-noir'
 relativeURLs = true
 canonifyURLs = true
 
+enableRobotsTXT = true
+
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
@@ -59,7 +61,21 @@ defaultContentLanguageInSubdir = false
   category = "categories"
   tag = "tags"
 
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
 [params]
   name = "Enigma North"
   discord = "sas.hard"
   github = "https://github.com/Repulsiveprogress"
+  description = "Developer and porter of Minecraft plugins for Paper servers. Open-source forks updated for current Minecraft versions."
+  descriptionRu = "Разработчик и портировщик плагинов для Minecraft на Paper-серверах. Open-source форки, обновлённые под актуальные версии Minecraft."
+  keywords = "Minecraft plugins, Paper server, Spigot plugins, Minecraft mods, open source, plugin development"
+  keywordsRu = "плагины Minecraft, Paper сервер, Spigot плагины, моды Minecraft, open source, разработка плагинов"
+  image = "/favicon-512.png"
+  twitterCard = "summary"
+  [params.yandex]
+    verification = ""
+  [params.google]
+    verification = ""

@@ -1,6 +1,8 @@
 ---
 title: "О нас"
 layout: "about"
+description: "Enigma North разрабатывает и портирует плагины для Minecraft, поддерживая open-source форки под актуальные версии Paper-сервера."
+keywords: ["о нас Enigma North", "разработка плагинов Minecraft", "плагины Paper сервер", "open-source Minecraft"]
 ---
 
 Enigma North занимается разработкой и портированием плагинов для Minecraft — мы делаем качественные игровые расширения доступными на актуальных версиях Paper-сервера.
