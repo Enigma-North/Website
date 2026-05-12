@@ -3,8 +3,8 @@ title: "Enigma Slimefun4"
 weight: 1
 summary: "Slimefun — плагин, который превращает ванильный Minecraft-сервер в опыт, похожий на модпак, без установки модов. Более 500 новых предметов и рецептов: от рюкзаков и джетпаков до ядерных реакторов, магических алтарей, энергосетей и систем транспортировки предметов."
 version: "Minecraft 26.1.2 / Paper 26.1.2 / Java 25"
-download: "https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/releases"
-github: "https://github.com/Repulsiveprogress/Enigma-Slimefun4-new"
+download: "https://github.com/Enigma-North/Enigma-Slimefun4-new/releases"
+github: "https://github.com/Enigma-North/Enigma-Slimefun4-new"
 ---
 
 Это **неофициальный форк Slimefun 4**, портированный на Paper 26.1.2 / Java 25.
@@ -30,7 +30,7 @@ Slimefun — плагин, превращающий ванильный Minecraft
 ## Установка
 
 1. Установите Paper 26.1.2 и убедитесь, что сервер запускается на Java 25.
-2. Скачайте `.jar` из [Releases](https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/releases).
+2. Скачайте `.jar` из [Releases](https://github.com/Enigma-North/Enigma-Slimefun4-new/releases).
 3. Поместите `.jar` в папку `plugins/` сервера.
 4. Запустите сервер — файлы конфигурации создадутся в `plugins/Slimefun/`.
 
@@ -39,7 +39,7 @@ Slimefun — плагин, превращающий ванильный Minecraft
 Требования: JDK 25, Maven 3.9+
 
 ```bash
-git clone https://github.com/Repulsiveprogress/Enigma-Slimefun4-new
+git clone https://github.com/Enigma-North/Enigma-Slimefun4-new
 cd Enigma-Slimefun4-new
 mvn clean package
 ```
@@ -57,5 +57,5 @@ mvn clean package
 
 ## Лицензия
 
-Slimefun 4 лицензирован под [GNU GPLv3](https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/blob/master/LICENSE).  
+Slimefun 4 лицензирован под [GNU GPLv3](https://github.com/Enigma-North/Enigma-Slimefun4-new/blob/master/LICENSE).  
 Оригинальный проект: [Slimefun/Slimefun4](https://github.com/Slimefun/Slimefun4)

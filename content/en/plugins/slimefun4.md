@@ -3,8 +3,8 @@ title: "Enigma Slimefun4"
 weight: 1
 summary: "Slimefun is a plugin that turns a vanilla Minecraft server into a modpack-like experience without installing any mods. Over 500 new items and recipes: from backpacks and jetpacks to nuclear reactors, magic altars, power grids and item transport systems."
 version: "Minecraft 26.1.2 / Paper 26.1.2 / Java 25"
-download: "https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/releases"
-github: "https://github.com/Repulsiveprogress/Enigma-Slimefun4-new"
+download: "https://github.com/Enigma-North/Enigma-Slimefun4-new/releases"
+github: "https://github.com/Enigma-North/Enigma-Slimefun4-new"
 ---
 
 This is an **unofficial fork of Slimefun 4**, ported to Paper 26.1.2 / Java 25.
@@ -30,7 +30,7 @@ This fork exists to make the plugin work on the current version of Minecraft.
 ## Installation
 
 1. Install Paper 26.1.2 and make sure the server runs on Java 25.
-2. Download the `.jar` from [Releases](https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/releases).
+2. Download the `.jar` from [Releases](https://github.com/Enigma-North/Enigma-Slimefun4-new/releases).
 3. Place the `.jar` in the server's `plugins/` folder.
 4. Start the server — config files will be created in `plugins/Slimefun/`.
 
@@ -39,7 +39,7 @@ This fork exists to make the plugin work on the current version of Minecraft.
 Requirements: JDK 25, Maven 3.9+
 
 ```bash
-git clone https://github.com/Repulsiveprogress/Enigma-Slimefun4-new
+git clone https://github.com/Enigma-North/Enigma-Slimefun4-new
 cd Enigma-Slimefun4-new
 mvn clean package
 ```
@@ -57,5 +57,5 @@ No changes to gameplay, recipes or balance — this is a purely technical port.
 
 ## License
 
-Slimefun 4 is licensed under [GNU GPLv3](https://github.com/Repulsiveprogress/Enigma-Slimefun4-new/blob/master/LICENSE).  
+Slimefun 4 is licensed under [GNU GPLv3](https://github.com/Enigma-North/Enigma-Slimefun4-new/blob/master/LICENSE).  
 Original project: [Slimefun/Slimefun4](https://github.com/Slimefun/Slimefun4)

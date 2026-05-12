@@ -3,8 +3,8 @@ title: "Enigma Storage"
 weight: 2
 summary: "Компактная система терминального хранения предметов для Paper/Spigot серверов Minecraft, вдохновлённая Applied Energistics 2. Добавляет Deep Storage Units огромной ёмкости, беспроводной терминал и хранение данных в SQLite."
 version: "Minecraft 26.1.2 / Paper 26.1.2"
-download: "https://github.com/Repulsiveprogress/Enigma-Storage/releases"
-github: "https://github.com/Repulsiveprogress/Enigma-Storage"
+download: "https://github.com/Enigma-North/Enigma-Storage/releases"
+github: "https://github.com/Enigma-North/Enigma-Storage"
 ---
 
 **Enigma Storage** — плагин массового хранения предметов для Paper/Spigot, форк DeepStoragePlus, обновлённый для актуальной версии Minecraft — 26.1.2.
@@ -75,4 +75,4 @@ github: "https://github.com/Repulsiveprogress/Enigma-Storage"
 
 ## Лицензия
 
-Проект распространяется под [GNU GPL v3](https://github.com/Repulsiveprogress/Enigma-Storage/blob/main/LICENSE).
+Проект распространяется под [GNU GPL v3](https://github.com/Enigma-North/Enigma-Storage/blob/main/LICENSE).

@@ -2,7 +2,6 @@ baseURL = '/'
 title = 'Enigma North'
 theme = 'hugo-noir'
 
-relativeURLs = true
 canonifyURLs = true
 
 enableRobotsTXT = true
@@ -68,7 +67,7 @@ defaultContentLanguageInSubdir = false
 [params]
   name = "Enigma North"
   discord = "sas.hard"
-  github = "https://github.com/Repulsiveprogress"
+  github = "https://github.com/Enigma-North"
   description = "Developer and porter of Minecraft plugins for Paper servers. Open-source forks updated for current Minecraft versions."
   descriptionRu = "Разработчик и портировщик плагинов для Minecraft на Paper-серверах. Open-source форки, обновлённые под актуальные версии Minecraft."
   keywords = "Minecraft plugins, Paper server, Spigot plugins, Minecraft mods, open source, plugin development"

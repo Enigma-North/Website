@@ -3,15 +3,15 @@ title: "Enigma Cultivation"
 weight: 3
 summary: "Cultivation is a Slimefun4 addon that adds a plethora of plants, bushes and trees to Minecraft as well as an amazing food selection made via a unique, fully featured kitchen! Using Display Entities, plants and blocks are displayed like you've never seen before."
 version: "Minecraft 26.1.2 / Paper 26.1.2 / Java 21 · Requires Enigma Slimefun4"
-download: "https://github.com/Repulsiveprogress/Enigma-Slimefun-Cultivation/releases"
-github: "https://github.com/Repulsiveprogress/Enigma-Slimefun-Cultivation"
+download: "https://github.com/Enigma-North/Enigma-Slimefun-Cultivation/releases"
+github: "https://github.com/Enigma-North/Enigma-Slimefun-Cultivation"
 addon: true
 ---
 
 ![Cultivation](https://user-images.githubusercontent.com/20646323/231161480-7b6bd303-cec9-4555-aa40-5c502aaa031b.png)
 
 > **EnigmaticMP Fork** — ported to Minecraft 26.1.2 / Paper 26.1.2 / Java 21 with built-in Russian localisation.  
-> **Requires**: [Enigma Slimefun4](https://github.com/Repulsiveprogress/Enigma-Slimefun4-new)
+> **Requires**: [Enigma Slimefun4](https://github.com/Enigma-North/Enigma-Slimefun4-new)
 
 Cultivation is a Slimefun4 addon that adds a plethora of plants, bushes and trees to Minecraft as well as an amazing food selection to be made via a unique, fully featured kitchen! Using Display Entities we are able to display plants and blocks like you've never seen before.
 
