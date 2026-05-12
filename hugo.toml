@@ -68,6 +68,7 @@ defaultContentLanguageInSubdir = false
   name = "Enigma North"
   discord = "sas.hard"
   github = "https://github.com/Enigma-North"
+  author_github = "https://github.com/Repulsiveprogress"
   description = "Developer and porter of Minecraft plugins for Paper servers. Open-source forks updated for current Minecraft versions."
   descriptionRu = "Разработчик и портировщик плагинов для Minecraft на Paper-серверах. Open-source форки, обновлённые под актуальные версии Minecraft."
   keywords = "Minecraft plugins, Paper server, Spigot plugins, Minecraft mods, open source, plugin development"

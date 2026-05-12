@@ -9,8 +9,8 @@
   <!-- Contributor card -->
   <div class="contrib-card">
 
-    {{/* Extract GitHub username from params URL */}}
-    {{ $ghURL := .Site.Params.github }}
+    {{/* Extract GitHub username from personal author param */}}
+    {{ $ghURL := .Site.Params.author_github }}
     {{ $ghUser := index (last 1 (split $ghURL "/")) 0 }}
 
     <!-- Avatar -->
