@@ -9,70 +9,95 @@ github: "https://github.com/Enigma-North/Enigma-Storage"
 
 **Enigma Storage** is a bulk item storage plugin for Paper/Spigot, forked from DeepStoragePlus and updated for the current Minecraft version — 26.1.2.
 
-## Features
+Store millions of items in a single block. DSU data is saved in SQLite so nothing is lost on restart. Access your storage wirelessly from anywhere and automate transfers with hoppers.
 
-- **Deep Storage Units (DSU)** with massive item capacity and portable Storage Containers.
-- **Wireless terminal** linked to your DSUs from anywhere.
-- **SQLite persistence** — DSU contents survive restarts and migrations.
-- **Custom recipes** via the built-in CustomRecipeAPI.
-- **Fine-grained permissions** for all commands and features.
+---
 
 ## Installation
 
-1. Copy `EnigmaStorage.jar` into your server's `plugins/` folder.
-2. Start the server to generate `plugins/EnigmaStorage/config.yml`.
-3. Reload or restart the server.
+1. Put `EnigmaStorage.jar` in `plugins/`.
+2. Start the server.
+3. Edit `plugins/EnigmaStorage/config.yml` if needed.
+
+There's an optional resource pack — players see a download link on join. You can turn it off in the config.
+
+---
+
+## Features
+
+**Storage**
+- 6 sizes: 1K / 4K / 16K / 64K / 256K / 1M items per DSU
+- Sort by name, count, container order, or ID
+- Lock your DSU and add trusted players
+- Hopper I/O with adjustable speed and upgrades
+
+**Wireless Terminal**
+- Use your DSU from anywhere on the map
+- Bind it with a Link Module, set a range limit or remove it entirely
+
+**Custom Recipes**
+- Craft at a special workbench (dispenser)
+- Browse all recipes in a recipe book with page navigation
+
+**Languages**
+- Ships with: ru, en, de, fr, es, pl, cn
+- Drop a `.json` into `languages/` and set it in config to add your own
+
+---
 
 ## Commands
 
-### Enigma Storage
+All commands use `/es` — aliases `/enigmastorage` and `/dsp` also work.
 
-| Command | Description |
+| Command | What it does |
 |---|---|
-| `/es items` | List all registered Enigma Storage items |
-| `/es give <player> <item> <amount>` | Give an item to a player |
-| `/es give <item> <amount>` | Give an item to yourself |
-| `/es migrate` | Force-migrate DSU data from lore to SQLite |
+| `/es give <item> [amount]` | Give yourself an item |
+| `/es give <player> <item> [amount]` | Give a player an item |
+| `/es items` | Show all plugin items |
+| `/es migrate` | Re-run DSU data migration to SQLite |
+| `/es recipe book` | Open the recipe book |
+| `/es recipe give <player> <name> [amount]` | Give a recipe result item |
+| `/es recipe items` | List all recipe names |
 
-> Aliases: `enigmastorage`, `dsp`
-
-### CustomRecipeAPI
-
-| Command | Description |
-|---|---|
-| `/crapi book` | Open the recipe book |
-| `/crapi new` | Create a new recipe in-game |
-| `/crapi setworkbench` | Open the workbench editor |
-| `/crapi workbench` | View the current workbench recipe |
-| `/crapi items` | Show available CustomRecipeAPI recipes |
-| `/crapi give <player> <item> <amount>` | Give a recipe result |
+---
 
 ## Permissions
 
-### Enigma Storage
+All permissions default to `op`. The only exception is `enigmastorage.recipe.craft` which is enabled for everyone so players can craft out of the box.
 
-| Permission | Description |
-|---|---|
-| `enigmastorage.create` | Allows creating DSUs |
-| `enigmastorage.adminopen` | Allows opening locked DSUs |
-| `enigmastorage.wireless` | Allows using the wireless terminal |
-| `enigmastorage.give` | Allows using `/es give` |
+| Permission | What it allows | Default |
+|---|---|---|
+| `enigmastorage.create` | Build DSUs | **everyone** |
+| `enigmastorage.wireless` | Use the wireless terminal | **everyone** |
+| `enigmastorage.recipe` | Access `/es recipe` | **everyone** |
+| `enigmastorage.recipe.book` | Open the recipe book | **everyone** |
+| `enigmastorage.recipe.craft` | Craft at the workbench | **everyone** |
+| `enigmastorage.recipe.craft.<name>` | Craft one specific recipe | **everyone** |
+| `enigmastorage.recipe.craftall` | Craft everything without individual perms | **everyone** |
+| `enigmastorage.adminopen` | Open locked DSUs | op |
+| `enigmastorage.give` | `/es give` and `/es items` | op |
+| `enigmastorage.recipe.giveitem` | Right-click items in the recipe book to receive them | op |
+| `enigmastorage.recipe.give` | `/es recipe give` and `/es recipe items` | op |
+| `enigmastorage.recipe.op` | See permission names in the recipe book | op |
 
-### CustomRecipeAPI
+---
 
-| Permission | Description |
-|---|---|
-| `crapi.command` | Use the `/crapi` command |
-| `crapi.book` | Open the recipe book and workbench |
-| `crapi.new` | Create new recipes in-game |
-| `crapi.craft` | Craft custom recipes |
-| `crapi.give` | Use `/crapi give` and `/crapi items` |
+## Config
 
-## Credits
+```yaml
+language: "en"           # en, ru, de, fr, es, pl, cn — or a custom file in languages/
+loadresourcepack: true   # show resource pack link on join
+prefix: "&f&l[&9&lEnigmaStorage&f&l]"
+range: 500               # wireless terminal range in blocks (-1 = no limit)
+countinstacks: false     # if true, storage limits count stacks instead of items
+1kmax: 1
+4kmax: 4
+16kmax: 16
+64kmax: 64
+256kmax: 256
+1mmax: 1024
+```
 
-- **EnigmaticMP** — author of this project.
-- **Darkolythe** — original DeepStoragePlus and CustomRecipeAPI.
+---
 
-## License
-
-Distributed under [GNU GPL v3](https://github.com/Enigma-North/Enigma-Storage/blob/main/LICENSE).
+Made by EnigmaticMP. Based on DeepStoragePlus by Darkolythe. GNU GPL v3.
