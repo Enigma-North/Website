@@ -43,7 +43,7 @@
                 {{ $author := cond (and $authorData $authorData.author) $authorData.author site.Params }}
                 {{ with $author }}
                 <a href="{{ absLangURL "/" }}" class="flex items-center gap-1.5 text-xl font-bold text-text-primary-light dark:text-text-primary-dark hover:text-accent-light dark:hover:text-accent-dark transition-colors duration-300">
-                    <img src="/enigma-nrth.png" alt="Enigma North" class="h-12 w-12 rounded-lg object-contain" style="image-rendering:auto">
+                    <img src="/enigma-north.png" alt="Enigma North" class="h-12 w-12 rounded-lg object-contain" style="image-rendering:auto">
                     {{ .name }}
                 </a>
                 {{ end }}
