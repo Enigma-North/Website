@@ -18,15 +18,23 @@ Every Server Rack (DSU) stores its contents in item NBT, so nothing is ever lost
 Enigma Storage is built around a handful of physical blocks you place, link, and grow into a network.
 
 ### Server Rack
+<img width="600" height="339" alt="Enigma Storage Rack" src="https://github.com/user-attachments/assets/d23a0981-c09d-4373-af42-942fd5f9192e" />
+
 Your storage core. Slot in storage cells, add trusted players, and hook up hoppers for fully automated I/O. Each rack projects a **16-block mesh zone** around itself — the foundation of your network.
 
 ### Wireless Router
+<img width="600" height="339" alt="Enigma Wireless Router" src="https://github.com/user-attachments/assets/aa0cf0c3-02e9-46e6-b3e9-f7eef34beb80" />
+
 Need more reach? Drop a Wireless Router. It extends the mesh with a **64-block coverage cube** and chains off your existing network — place it so its zone overlaps the rack's, and your range grows organically across the base. Link enough of them and scale it across your entire base.
 
 ### Wall Terminal
+<img width="600" height="339" alt="Enigma Wall Terminal" src="https://github.com/user-attachments/assets/2ab32dd7-e865-42a7-94c0-260a2507c63a" />
+
 A flush terminal that mounts right on the wall. Walk up, open it, and browse your linked rack's contents in-place — perfect for a clean, panel-lined storage room.
 
 ### Wireless Terminal
+<img width="600" height="339" alt="Enigma Wireless Terminal" src="https://github.com/user-attachments/assets/11d1b2e2-9b4b-4947-8b01-111adfec6dc1" />
+
 The same storage grid, in your hotbar. Bind it with a Link Module and access your Server Rack from anywhere inside the mesh — mine, fight, build, and deposit loot without ever walking home.
 
 ---
